@@ -4,18 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Recipe App</title>
+    <title>Welcome to RecipEase</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #0d6722;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 60vh;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        a {
+            color: #0d6722;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <h1>Welcome to the Recipe App!</h1>
+        <h1>Welcome to RecipEase!</h1>
     </header>
+
     <main>
-        <p>This is your go-to place for all delicious recipes. Get started by exploring various dishes!</p>
+        <p>This is your go-to place for all delicious recipes. Start exploring mouth-watering dishes from around the
+            world!</p>
+        <p><a href="{% url 'recipes_list' %}">View Recipes</a></p>
     </main>
+
     <footer>
-        <p>Enjoy cooking!</p>
+        <p>Enjoy cooking with RecipEase &copy; 2024</p>
     </footer>
 </body>
 
