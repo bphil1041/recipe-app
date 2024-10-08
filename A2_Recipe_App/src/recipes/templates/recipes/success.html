@@ -1,2 +1,97 @@
-<h2>You’ve successfully logged out!</h2>
-<a href="{% url 'login' %}">Log back in</a>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout Success</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto Slab', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #f8f9fa;
+            color: #0d6722;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 60vh;
+            padding: 20px;
+        }
+
+        p,
+        h2 {
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-align: center;
+            color: #0d6722;
+        }
+
+        a {
+            color: #0d6722;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>
+            <a href="{% url 'home' %}" style="text-decoration: none; color: inherit;">
+                RecipEase!
+            </a>
+        </h1>
+    </header>
+
+    <main>
+        <h2>You’ve successfully logged out!</h2>
+        <p><a href="{% url 'login' %}">Log back in</a></p>
+    </main>
+
+    <footer>
+        <p>Enjoy cooking with RecipEase &copy; 2024</p>
+    </footer>
+</body>
+
+</html>
