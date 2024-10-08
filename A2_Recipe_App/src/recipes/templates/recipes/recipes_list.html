@@ -78,12 +78,18 @@
             padding: 10px 0;
             text-align: center;
         }
+
+        .logout-button {
+            color: white;
+        }
     </style>
 </head>
 
 <body>
     <header>
         <h1>All Recipes</h1>
+        <a class="logout-button" href="{% url 'logout' %}">Logout</a>
+
     </header>
 
     <main>
