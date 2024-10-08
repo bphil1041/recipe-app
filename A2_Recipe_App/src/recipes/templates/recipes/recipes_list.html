@@ -50,6 +50,41 @@
             padding: 20px;
         }
 
+        .search-form {
+            display: flex;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        .search-form input {
+            flex: 1;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-form input:focus {
+            border-color: #0d6722;
+            outline: none;
+        }
+
+        .search-form button {
+            background-color: #0d6722;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-form button:hover {
+            background-color: #0a501a;
+        }
+
         .recipe-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -110,6 +145,44 @@
             margin: 0;
             font-size: 1em;
         }
+
+        /* New styles for the DataFrame */
+        .data-frame {
+            margin-top: 40px;
+            overflow-x: auto;
+            /* Allow horizontal scrolling */
+            border-collapse: collapse;
+            /* Ensure no space between table cells */
+            width: 100%;
+            /* Full width for the DataFrame */
+        }
+
+        .data-frame th,
+        .data-frame td {
+            padding: 8px;
+            /* Padding for table cells */
+            border: 1px solid #ddd;
+            /* Border for table cells */
+            text-align: left;
+            /* Left align text in table cells */
+        }
+
+        .data-frame th {
+            background-color: #0d6722;
+            /* Header background */
+            color: #fff;
+            /* Header text color */
+        }
+
+        .data-frame tr:nth-child(even) {
+            background-color: #f2f2f2;
+            /* Zebra striping */
+        }
+
+        .data-frame tr:hover {
+            background-color: #ddd;
+            /* Highlight row on hover */
+        }
     </style>
 </head>
 
@@ -124,6 +197,12 @@
     </header>
 
     <main>
+        <!-- Add search form here -->
+        <form class="search-form" method="GET" action="{% url 'recipes_list' %}">
+            <input type="text" name="search" placeholder="Search by title or ingredient" value="{{ search_query }}">
+            <button type="submit">Search</button>
+        </form>
+
         <div class="recipe-list">
             {% for recipe in recipes %}
             <div class="recipe-item">
@@ -135,6 +214,14 @@
             <p>No recipes available at the moment.</p>
             {% endfor %}
         </div>
+
+        <!-- Display the DataFrame if available -->
+        {% if data_frame %}
+        <div class="data-frame">
+            {{ data_frame|safe }} <!-- Render the DataFrame as HTML -->
+        </div>
+        {% endif %}
+
     </main>
 
     <footer>
