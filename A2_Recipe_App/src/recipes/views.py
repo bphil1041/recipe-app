@@ -19,7 +19,6 @@ class RecipeListView(LoginRequiredMixin, ListView):
     model = Recipe
     template_name = 'recipes/recipes_list.html'
     context_object_name = 'recipes'
-    paginate_by = 10  # Set the number of recipes per page
 
     def get_queryset(self):
         """Filter recipes based on the search query."""
@@ -44,8 +43,13 @@ class RecipeListView(LoginRequiredMixin, ListView):
 def recipe_detail_view(request, recipe_id):
     """Render the detail view for a specific recipe."""
     recipe = get_object_or_404(Recipe, id=recipe_id)
+
+    # Split ingredients into a list if stored as a comma-separated string
+    ingredients = recipe.ingredients.split(',') if recipe.ingredients else []
+
     context = {
         'recipe': recipe,
+        'ingredients': ingredients,
     }
     return render(request, 'recipes/recipe_detail.html', context)
 
