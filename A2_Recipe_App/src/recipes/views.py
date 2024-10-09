@@ -14,6 +14,11 @@ def home_view(request):
     return render(request, 'recipes/recipes_home.html')
 
 
+def about_view(request):
+    """Render the About Me page."""
+    return render(request, 'recipes/about_me.html')
+
+
 class RecipeListView(LoginRequiredMixin, ListView):
     """Render the list of recipes with optional filtering and pagination."""
     model = Recipe
