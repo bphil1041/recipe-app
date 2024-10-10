@@ -56,30 +56,41 @@
             border-radius: 8px;
             width: 100%;
             max-width: 400px;
+            box-sizing: border-box;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        form p {
-            font-size: 1.2em;
+        form label {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        form input[type="text"],
+        form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
 
         button {
+            width: 100%;
             color: #fff;
             background-color: #0d6722;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border-radius: 4px;
-            font-size: 1em;
+            font-size: 1.1em;
             cursor: pointer;
             text-transform: uppercase;
+            margin-top: 20px;
         }
 
         button:hover {
             background-color: #094f19;
-        }
-
-        .login-button-2 {
-            margin-top: 20px;
         }
 
         footer {
@@ -102,19 +113,15 @@
 <body>
     {% extends "recipes/base.html" %}
     {% block content %}
-
     <main>
         <h2>Login</h2>
-        <form method="post">
+        <form class="login-box" method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">Login</button>
         </form>
     </main>
-
-
     {% endblock %}
-
 </body>
 
 </html>
