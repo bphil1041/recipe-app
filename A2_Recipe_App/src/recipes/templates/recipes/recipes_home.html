@@ -15,8 +15,9 @@
             padding: 0;
             box-sizing: border-box;
             background-color: #f8f9fa;
-            color: #333;
         }
+
+
 
         header {
             background-color: #f8f9fa;
@@ -32,6 +33,8 @@
         h1 {
             margin: 0;
             font-size: 2.5em;
+
+
         }
 
         main {
@@ -93,10 +96,10 @@
 </head>
 
 <body>
-    <header>
-        <h1>Welcome to RecipEase!</h1>
-        <a class="login-button" href="{% url 'login' %}">Login</a>
-    </header>
+    {% extends "recipes/base.html" %}
+    {% block content %}
+
+
 
     <main>
         <p>Discover a world of culinary delights with RecipEase! Whether you're a seasoned chef or just starting
@@ -124,9 +127,9 @@
         <p class="login-button-2"><a href="{% url 'login' %}">Login to view recipes</a></p>
     </main>
 
-    <footer>
-        <p>Enjoy cooking with RecipEase &copy; 2024</p>
-    </footer>
+
+    {% endblock %}
+
 </body>
 
 </html>
