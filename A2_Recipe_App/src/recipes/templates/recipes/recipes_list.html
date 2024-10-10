@@ -187,14 +187,11 @@
 </head>
 
 <body>
-    <header>
-        <h1>
-            <a href="{% url 'home' %}" style="text-decoration: none; color: inherit;">
-                Welcome to RecipEase!
-            </a>
-        </h1>
-        <a class="logout-button" href="{% url 'logout' %}">Logout</a>
-    </header>
+    {% extends "recipes/base.html" %}
+
+
+
+    {% block content %}
 
     <main>
         <!-- Add search form here -->
@@ -221,12 +218,13 @@
             {{ data_frame|safe }} <!-- Render the DataFrame as HTML -->
         </div>
         {% endif %}
-
     </main>
 
-    <footer>
-        <p>Enjoy cooking with RecipEase &copy; 2024</p>
-    </footer>
+
+    {% endblock %}
+
+
+
 </body>
 
 </html>
