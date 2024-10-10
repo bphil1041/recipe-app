@@ -18,18 +18,6 @@
         }
 
 
-
-        header {
-            background-color: #f8f9fa;
-            color: #0d6722;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            /* Aligns title and button on opposite ends */
-            align-items: center;
-            /* Vertically aligns the items in the center */
-        }
-
         h1 {
             margin: 0;
             font-size: 2.5em;
@@ -46,6 +34,12 @@
             padding: 20px;
         }
 
+        .intro {
+            color: #0d6722;
+            font-weight: bold;
+            font-size: 1.25em;
+        }
+
         p {
             font-size: 1.2em;
             line-height: 1.6;
@@ -53,14 +47,19 @@
             text-align: center;
         }
 
+        .features {
+            margin-top: 20px;
+        }
+
         a {
-            color: #0d6722;
+            color: #fff;
             text-decoration: none;
             font-weight: bold;
         }
 
-        a:hover {
-            text-decoration: underline;
+
+        .home-page-list {
+            margin-top: 50px;
         }
 
         footer {
@@ -78,19 +77,20 @@
             font-size: 1em;
         }
 
-        .login-button {
+        .login-button-2 {
             color: #0d6722;
-            background-color: #fff;
+            background-color: #0d6722;
             border: 1px solid #0d6722;
             padding: 8px 16px;
             border-radius: 4px;
             text-transform: uppercase;
             font-size: 1em;
+            margin-top: 50px;
         }
 
-        .login-button:hover {
-            background-color: #0d6722;
-            color: #fff;
+        .login-button-2:hover {
+            background-color: #094f19;
+
         }
     </style>
 </head>
@@ -102,14 +102,16 @@
 
 
     <main>
-        <p>Discover a world of culinary delights with RecipEase! Whether you're a seasoned chef or just starting
+        <p class="intro">Welcome to RecipEase! Discover a world of culinary delights with RecipEase! Whether you're a
+            seasoned chef or
+            just starting
             your cooking journey, this app offers a user-friendly platform to explore, search, and save your favorite
             recipes.</p>
 
-        <p>Features:</p>
+        <p class="features">Features:</p>
 
         <p>
-        <ul>
+        <ul class="home-page-list">
             <li>Browse a Diverse Collection: Explore a variety of recipes categorized by cuisine, meal type, and dietary
                 preferences, with over 15 pre-loaded recipes to inspire your next meal.</li>
             <li>Search Functionality: Quickly find the perfect dish by searching ingredients, meal types, or recipe
