@@ -76,22 +76,18 @@
 </head>
 
 <body>
-    <header>
-        <h1>
-            <a href="{% url 'home' %}" style="text-decoration: none; color: inherit;">
-                RecipEase!
-            </a>
-        </h1>
-    </header>
+    {% extends "recipes/base.html" %}
+    {% block content %}
+
 
     <main>
         <h2>You’ve successfully logged out!</h2>
         <p><a href="{% url 'login' %}">Log back in</a></p>
     </main>
 
-    <footer>
-        <p>Enjoy cooking with RecipEase &copy; 2024</p>
-    </footer>
+
+    {% endblock %}
+
 </body>
 
 </html>
