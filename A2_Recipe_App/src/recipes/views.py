@@ -1,5 +1,11 @@
+from .forms import RecipeForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
+from django.shortcuts import render, redirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
+from .forms import SignUpForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q, Count
@@ -95,3 +101,66 @@ def visualize_recipes():
     plt.title('Recipes by Difficulty')
     # Save the figure if needed
     plt.savefig('static/recipes_by_difficulty.png')
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)  # Log the user in after signup
+            # Redirect to the homepage or a welcome page
+            return redirect('home')
+    else:
+        form = SignUpForm()
+
+    return render(request, 'recipes/signup.html', {'form': form})
+
+
+@login_required
+def profile_view(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            # Important to keep the user logged in after password change
+            update_session_auth_hash(request, user)
+            return redirect('profile')
+    else:
+        form = PasswordChangeForm(request.user)
+
+    return render(request, 'recipes/profile.html', {'form': form})
+
+
+@login_required
+def profile(request):
+    if request.method == 'POST':
+        form = RecipeForm(request.POST, request.FILES)
+        if form.is_valid():
+            recipe = form.save(commit=False)
+            recipe.user = request.user  # Link the recipe to the logged-in user
+            recipe.save()
+            return redirect('profile')
+    else:
+        form = RecipeForm()
+
+    # Get the logged-in user's recipes
+    recipes = Recipe.objects.filter(user=request.user)
+
+    return render(request, 'profile.html', {'form': form, 'recipes': recipes})
+
+
+@login_required
+def add_recipe(request):
+    if request.method == 'POST':
+        form = RecipeForm(request.POST, request.FILES)
+        if form.is_valid():
+            recipe = form.save(commit=False)
+            recipe.user = request.user
+            recipe.save()
+            # Redirect to profile or a list of recipes after saving
+            return redirect('profile')
+    else:
+        form = RecipeForm()
+
+    return render(request, 'recipes/create.html', {'recipe_form': form})
