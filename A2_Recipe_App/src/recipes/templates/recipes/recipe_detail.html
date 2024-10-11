@@ -19,11 +19,14 @@
 
 
     <main>
+        <h1 class="recipe-detail-title">{{ recipe.title }}</h1>
+
         {% if recipe.image %}
         <img src="{{ recipe.image.url }}" alt="Image of {{ recipe.title }}" class="recipe-image">
         {% endif %}
 
         <div>
+
             <h2 class="detail-title">Description</h2>
             <div>
                 <p class="section">{{ recipe.description }}</p>
