@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - RecipEase</title>
+    <style>
+        body {
+            font-family: 'Roboto Slab', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 60vh;
+            padding: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        form input[type="text"],
+        form input[type="password"],
+        form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            color: #fff;
+            background-color: #0d6722;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-size: 1.1em;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #094f19;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h2>Create Your Account</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Sign Up</button>
+        </form>
+    </main>
+</body>
+
+</html>
