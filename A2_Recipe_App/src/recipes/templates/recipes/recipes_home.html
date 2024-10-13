@@ -9,89 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Roboto Slab', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f8f9fa;
-        }
 
-
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-
-
-        }
-
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            min-height: 60vh;
-            padding: 20px;
-        }
-
-        .intro {
-            color: #0d6722;
-            font-weight: bold;
-            font-size: 1.25em;
-        }
-
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .features {
-            margin-top: 20px;
-        }
-
-        a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-
-        .home-page-list {
-            margin-top: 50px;
-        }
-
-        footer {
-            background-color: #0d6722;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 1em;
-        }
-
-        .login-button-2 {
-            color: #0d6722;
-            background-color: #0d6722;
-            border: 1px solid #0d6722;
-            padding: 8px 16px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            font-size: 1em;
-            margin-top: 50px;
-        }
-
-        .login-button-2:hover {
-            background-color: #094f19;
-
-        }
     </style>
 </head>
 
@@ -99,17 +17,15 @@
     {% extends "recipes/base.html" %}
     {% block content %}
 
-
-
-    <main>
-        <p class="intro">Welcome to RecipEase! Discover a world of culinary delights with RecipEase! Whether you're a
+    <main class="home-main">
+        <p class="home-intro">Welcome to RecipEase! Discover a world of culinary delights with RecipEase! Whether you're
+            a
             seasoned chef or
             just starting
             your cooking journey, this app offers a user-friendly platform to explore, search, and save your favorite
             recipes.</p>
 
-
-        <p>
+        <p class="home-paragraph">
         <ul class="home-page-list">
             <li>Browse a Diverse Collection: Explore a variety of recipes categorized by cuisine, meal type, and dietary
                 preferences, with over 15 pre-loaded recipes to inspire your next meal.</li>
@@ -118,19 +34,16 @@
             <li>User-Friendly Interface: Enjoy a clean and intuitive layout that makes navigating through recipes
                 effortless.</li>
             <li>Personalized Experience: Create an account to save your favorite recipes and add your own unique
-                creations
-                to share with others.</li>
+                creations to share with others.</li>
             <li> About Me Page: Learn more about the developer behind the app and connect through various social media
                 links.</li>
             <li> Get ready to embark on a delicious adventure in the kitchen. Happy cooking!</li>
         </ul>
         </p>
-        <p class="login-button-2"><a href="{% url 'signup' %}">Sign up here!</a></p>
+        <p class="home-login-button-2"><a class="home-link" href="{% url 'signup' %}">Sign up here!</a></p>
     </main>
 
-
     {% endblock %}
-
 </body>
 
 </html>
