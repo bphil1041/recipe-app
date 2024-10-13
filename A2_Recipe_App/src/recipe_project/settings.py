@@ -1,4 +1,5 @@
 from pathlib import Path
+from decouple import config  # Import the decouple package
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -7,10 +8,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@87xk46*y)grs)!d*17*4z$r8lvxrz2z_v(8&o$r+%ac$a)m+8'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -97,3 +98,62 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'recipes' / 'media'  # Adjusted to avoid extra src
 
 LOGIN_URL = '/login/'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
