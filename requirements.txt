@@ -1,5 +1,5 @@
 alabaster==0.7.16
-altgraph @ file:///AppleInternal/Library/BuildRoots/226e9c8c-edb1-11ee-8f17-a65dcee5a99e/Library/Caches/com.apple.xbs/Sources/python3/altgraph-0.17.2-py2.py3-none-any.whl
+altgraph==0.17.2
 asgiref==3.8.1
 astroid==3.3.5
 asttokens==2.4.1
@@ -21,7 +21,7 @@ exceptiongroup==1.2.1
 executing==2.0.1
 filelock==3.15.4
 fonttools==4.54.1
-future @ file:///AppleInternal/Library/BuildRoots/226e9c8c-edb1-11ee-8f17-a65dcee5a99e/Library/Caches/com.apple.xbs/Sources/python3/future-0.18.2-py3-none-any.whl
+future==0.18.2  # Use the latest stable version if needed
 gunicorn==23.0.0
 idna==3.10
 imagesize==1.4.1
@@ -31,7 +31,7 @@ ipython==8.18.1
 jedi==0.19.1
 Jinja2==3.1.4
 kiwisolver==1.4.7
-macholib @ file:///AppleInternal/Library/BuildRoots/226e9c8c-edb1-11ee-8f17-a65dcee5a99e/Library/Caches/com.apple.xbs/Sources/python3/macholib-1.15.2-py2.py3-none-any.whl
+macholib==1.15.2  # Use the latest stable version if needed
 MarkupSafe==3.0.1
 matplotlib==3.9.2
 matplotlib-inline==0.1.7
@@ -58,7 +58,7 @@ python-decouple==3.8
 pytz==2024.2
 PyYAML==6.0.2
 requests==2.32.3
-six @ file:///AppleInternal/Library/BuildRoots/226e9c8c-edb1-11ee-8f17-a65dcee5a99e/Library/Caches/com.apple.xbs/Sources/python3/six-1.15.0-py2.py3-none-any.whl
+six==1.15.0  # Use the latest stable version if needed
 snowballstemmer==2.2.0
 Sphinx==7.4.7
 sphinx-autoapi==3.3.2
